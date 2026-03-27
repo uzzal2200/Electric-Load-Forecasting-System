@@ -1,0 +1,5 @@
+Cluster,Name,Load Info,Hour Info,Temp Info
+0,Low-houston-temperature morning,"  Average loads: houston: 10649.40, dallas: 11769.42, san antonio: 5836.26",  Average hour: 9.5,  Average temperature: 29.8
+1,High-houston-temperature afternoon,"  Average loads: houston: 14229.96, dallas: 16229.15, san antonio: 8164.83",  Average hour: 13.3,  Average temperature: 37.0
+2,Low-houston-temperature morning,"  Average loads: houston: 10642.49, dallas: 12376.29, san antonio: 6087.26",  Average hour: 8.4,  Average temperature: 28.9
+3,Low-houston-temperature morning,"  Average loads: houston: 10775.10, dallas: 12110.07, san antonio: 5746.82",  Average hour: 9.7,  Average temperature: 22.3
