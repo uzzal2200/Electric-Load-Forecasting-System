@@ -1,10 +1,23 @@
 # ⚡ Electric Load Forecasting System
 
-[![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)]()
-[![Flask](https://img.shields.io/badge/Flask-Web-orange?style=flat-square&logo=flask)](https://flask.palletsprojects.com/)
-[![ML](https://img.shields.io/badge/ML-scikit--learn-red?style=flat-square&logo=scikit-learn)](https://scikit-learn.org/)
+
+<div align="center">
+
+[![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)]()
+[![Flask](https://img.shields.io/badge/Flask-Web-orange?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+
+[![XGBoost](https://img.shields.io/badge/XGBoost-Enabled-002060?style=for-the-badge)](https://xgboost.readthedocs.io/)
+[![Pandas](https://img.shields.io/badge/Pandas-Dataframes-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-Numerical-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37726?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![VS Code](https://img.shields.io/badge/IDE-VS%20Code-0078D4?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/)
+[![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
+
+</div>
 
 A robust, production-ready data mining and machine learning solution for high-accuracy electricity load forecasting. This system leverages advanced clustering algorithms and ensemble machine learning techniques to analyze hourly electricity demand patterns across major U.S. cities, delivering actionable insights and precise 24-hour load predictions through an intuitive web-based analytics dashboard.
 
@@ -138,6 +151,90 @@ electric-load-forecasting/
 
 ## 📊 System Requirements
 
+### Improved Architecture
+## 🏗️ Architecture - Complete Data Pipeline
+
+```
+╔═════════════════════════════════════════════════════════════════════════════╗
+║              ⚡ ELECTRIC LOAD FORECASTING SYSTEM (FULL STACK)              ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    📥 DATA INGESTION & PREPROCESSING                        │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │ Input: CSV Files (hourly, daily, weekly) + Weather Data               │ │
+│  │ Process: Missing value imputation | Feature engineering | Scaling     │ │
+│  │ Output: Clean, normalized dataset ready for ML processing             │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+          ┌──────────────────────────┼──────────────────────────┐
+          ↓                          ↓                          ↓
+┌──────────────────────┐  ┌──────────────────────┐  ┌──────────────────────┐
+│  🎯 CLUSTERING       │  │  📈 FORECASTING      │  │  📊 VISUALIZATION    │
+│  ANALYSIS            │  │  PIPELINE            │  │  & ANALYSIS          │
+├──────────────────────┤  ├──────────────────────┤  ├──────────────────────┤
+│ • K-Means            │  │ • Linear Regression  │  │ • PCA (2D/3D)        │
+│ • DBSCAN             │  │ • Random Forest      │  │ • t-SNE              │
+│ • Hierarchical       │  │ • XGBoost            │  │ • Matplotlib/Seaborn │
+│ • PCA Projection     │  │ • Ensemble Methods   │  │ • Plotly Interactive │
+│                      │  │ • Confidence Bounds  │  │                      │
+├──────────────────────┤  ├──────────────────────┤  ├──────────────────────┤
+│ OUTPUT:              │  │ OUTPUT:              │  │ OUTPUT:              │
+│ • Labels             │  │ • 24-hr Forecast     │  │ • Charts/Graphs      │
+│ • Silhouette Score   │  │ • Uncertainties (±)  │  │ • Heatmaps           │
+│ • Anomalies (%)      │  │ • Model Metrics      │  │ • Dendrograms        │
+│ • Profiles           │  │ • Feature Importance │  │ • PCA Biplots        │
+└──────────────────────┘  └──────────────────────┘  └──────────────────────┘
+          ↓                          ↓                          ↓
+          └──────────────────────────┼──────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    🌐 RESTFUL API BACKEND (Flask)                           │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │ • /api/forecast      → Load predictions (24h)                        │ │
+│  │ • /api/cluster       → Cluster analysis results                      │ │
+│  │ • /api/metrics       → Model performance comparison                  │ │
+│  │ • /api/cities        → City-specific patterns & trends               │ │
+│  │ • /api/visualization → Chart data for dashboard                      │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     ↓
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    💻 INTERACTIVE WEB DASHBOARD                             │
+│  ┌───────────────────────────────────────────────────────────────────────┐ │
+│  │ 🎨 HTML5 + CSS3 + JavaScript | Real-time Responsive Interface       │ │
+│  └───────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│  ┌─────────────┬──────────────┬──────────────┬─────────────┐               │
+│  │  📊 Load    │  🎯 Cluster  │  📈 Forecast │  📉 Perf    │               │
+│  │  Data Viz   │  Results     │  Results     │  Metrics    │               │
+│  ├─────────────┼──────────────┼──────────────┼─────────────┤               │
+│  │  🌍 Multi   │  📅 Daily    │  🔧 Controls │  ⚙️ Settings│               │
+│  │  City Comp  │  Pattern     │  & Filters   │             │               │
+│  └─────────────┴──────────────┴──────────────┴─────────────┘               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+  🔄 Complete Flow: Ingest → Clean → Cluster → Forecast → Visualize → Serve
+```
+
+### Technology Stack by Layer
+
+| **Layer** | **Technologies** | **Purpose** |
+|:---:|:---:|:---:|
+| 📦 **Data** | CSV, Pandas, NumPy | Load, transform, store |
+| 🔧 **Processing** | Scikit-learn, SciPy | Feature engineering, scaling |
+| 🎯 **Clustering** | K-Means, DBSCAN, Hierarchical | Pattern discovery |
+| 🤖 **Forecasting** | XGBoost, RandomForest, Linear | ML predictions |
+| 📊 **Visualization** | Matplotlib, Seaborn, Plotly | Charts & analysis |
+| 🌐 **Backend API** | Flask, RESTful, JSON | Endpoints & routing |
+| 🎨 **Frontend** | HTML5, CSS3, JavaScript | Interactive dashboard |
+| 🚀 **Deployment** | Conda, Gunicorn, WSGI | Production serving |
+
+## 📊 System Requirements
+
 | Component | Requirement |
 |-----------|-------------|
 | **Python Version** | 3.10 or higher |
@@ -198,6 +295,72 @@ pip install -r requirements_minimal.txt
 ```bash
 pip install -r requirements_flexible.txt
 ```
+
+### Step 4: Verify Installation
+
+
+```
+┌────────────────────────────────────────────────────────────────────────────┐
+│              ⚡ ELECTRIC LOAD FORECASTING SYSTEM ARCHITECTURE              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+
+## 🏗️ Architecture - Full Stack Pipeline
+ ╔═════════════════════════════════════════════════════════════════════════════╗
+ ║                     📥 DATA INGESTION LAYER                                  ║
+ ║  Raw CSV Files (Hourly/Daily/Weekly) → Cleaning → Feature Engineering       ║
+ ║  Temporal Features | Weather Correlation | Normalization (StandardScaler)   ║
+ ╚═════════════════════════════════════════════════════════════════════════════╝
+                                         ↓
+                           ┌──────────────┴──────────────┐
+                           ↓                             ↓
+     ╔═══════════════════════════════════╗ ╔═══════════════════════════════════╗
+     ║   🎯 CLUSTERING PIPELINE          ║ ║  📈 FORECASTING PIPELINE          ║
+     ╠═══════════════════════════════════╣ ╠═══════════════════════════════════╣
+     ║ • K-Means Clustering              ║ ║ • Linear Regression               ║
+     ║ • DBSCAN (Anomaly Detection)      ║ ║ • Random Forest Ensemble          ║
+     ║ • Hierarchical Clustering         ║ ║ • XGBoost Gradient Boosting       ║
+     ║ • PCA 2D/3D Visualization         ║ ║ • Ensemble Meta-Learner           ║
+     ║ • t-SNE Dimensionality Reduction  ║ ║ • Confidence Interval Estimation  ║
+     ╠═══════════════════════════════════╣ ╠═══════════════════════════════════╣
+     ║ OUTPUT:                           ║ ║ OUTPUT:                           ║
+     ║ ├─ Cluster Labels & IDs           ║ ║ ├─ 24-Hour Load Forecasts        ║
+     ║ ├─ Silhouette Scores              ║ ║ ├─ Prediction Confidence (±%)    ║
+     ║ ├─ Cluster Profiles & Stats       ║ ║ ├─ Model Performance Metrics     ║
+     ║ └─ Anomalies & Outliers           ║ ║ └─ Feature Importance Ranking    ║
+     ╚═══════════════════════════════════╝ ╚═══════════════════════════════════╝
+                           ↓                             ↓
+                           └──────────────┬──────────────┘
+                                          ↓
+ ╔═════════════════════════════════════════════════════════════════════════════╗
+ ║                    🌐 RESTFUL API BACKEND (Flask Server)                    ║
+ ║                                                                             ║
+ ║  GET /api/forecast     → 24-hour electricity load predictions              ║
+ ║  GET /api/cluster      → Clustering results & analysis                     ║
+ ║  GET /api/metrics      → Model performance comparison                      ║
+ ║  GET /api/cities       → City-specific data & patterns                     ║
+ ║  GET /api/visualization → Chart data (Matplotlib, Plotly)                  ║
+ ╚═════════════════════════════════════════════════════════════════════════════╝
+                                          ↓
+ ╔═════════════════════════════════════════════════════════════════════════════╗
+ ║                    💻 INTERACTIVE WEB DASHBOARD                             ║
+ ║                                                                             ║
+ ║  🎨 Modern React-like UI | Real-time Updates | Responsive Design          ║
+ ║                                                                             ║
+ ║  ┌──────────────┬──────────────┬──────────────┬──────────────┐             ║
+ ║  │   📊 Load    │   🎯 Cluster │   📈 Forecast│   📉 Perf    │             ║
+ ║  │   Data Tab   │   Results    │   Results    │   Metrics    │             ║
+ ║  ├──────────────┼──────────────┼──────────────┼──────────────┤             ║
+ ║  │   🌍 City    │   📅 Daily   │   🔍 Search  │   ⚙️ Controls│             ║
+ ║  │   Compare    │   Pattern    │   & Filter   │   & Settings │             ║
+ ║  └──────────────┴──────────────┴──────────────┴──────────────┘             ║
+ ╚═════════════════════════════════════════════════════════════════════════════╝
+
+
+                  🔄 Flow: Ingest → Preprocess → Model → API → UI
+```
+
+Confirm that all packages are installed correctly:
 
 ### Step 4: Verify Installation
 
@@ -500,10 +663,10 @@ copies or substantial portions of the Software.
 
 ## 📧 Contact & Support
 
-**Author**: [Your Name]  
+**Author**: MD UZZZAL MIA  
 **Email**: uzzal.220605@s.pust.ac.bd  
 **Institution**: Pabna University of Science and Technology  
-**GitHub**: [@yourusername](https://github.com/yourusername)
+**GitHub**: [https://github.com/uzzal2200](https://github.com/uzzal2200)
 
 **Questions or Feedback?**
 - 📝 Open a GitHub Issue
@@ -512,20 +675,7 @@ copies or substantial portions of the Software.
 
 ---
 
-## 🎓 Citation
 
-If you use this project in your research or work, please cite it as:
-
-```bibtex
-@software{electric_load_2024,
-  title={Electric Load Forecasting System: Advanced ML Solutions for Energy Demand Prediction},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/yourusername/electric-load-forecasting}
-}
-```
-
----
 
 <div align="center">
 
