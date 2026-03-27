@@ -116,43 +116,8 @@ electric-load-forecasting/
     └── ensemble_weights.npy           # Model combination weights
 ```
 
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│         ELECTRIC LOAD FORECASTING SYSTEM               │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  ┌────────────────┐  ┌────────────────┐  ┌──────────┐ │
-│  │  Data Layer    │  │ Processing     │  │ ML/AI    │ │
-│  │                │  │ Pipeline       │  │ Engine   │ │
-│  │ • CSV Files    │  │                │  │          │ │
-│  │ • Time Series  │  │ • Clustering   │  │ • XGBoost│ │
-│  │ • Weather Data │  │ • Feature Eng. │  │ • RF     │ │
-│  │                │  │ • Scaling      │  │ • LR     │ │
-│  └────────────────┘  └────────────────┘  └──────────┘ │
-│         ↓                   ↓                    ↓      │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │         RESTful API (Flask)                      │  │
-│  │  /api/forecast, /api/cluster, /api/metrics      │  │
-│  └──────────────────────────────────────────────────┘  │
-│         ↓                                              │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │    Interactive Web Dashboard                    │  │
-│  │  • Load Visualization                          │  │
-│  │  • Clustering Results                          │  │
-│  │  • 24-Hour Forecasts                           │  │
-│  │  • Model Performance Metrics                   │  │
-│  │  • City Comparisons                            │  │
-│  └──────────────────────────────────────────────────┘  │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
-
 ## 📊 System Requirements
 
-### Improved Architecture
-## 🏗️ Architecture - Complete Data Pipeline
 
 ```
 ╔═════════════════════════════════════════════════════════════════════════════╗
